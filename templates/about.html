@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% set active_page = 'about' %}
+{% set title = 'About Me' %}
+
+{% block content %}
+
+<h2>About Me</h2>
+<p>
+{% filter markdown %}
+I am a {{age|default('23')}} year old programmer from Finland.
+
+I like cars, motorcycles, mechanic keyboards, Python, electronic dance music, programming, GNU/Linux, servers and stuff. *<small>I also pretend to lift</small>*
+
+Here's my [GitHub Account](https://github.com/fisle/).
+{% endfilter %}
+</p>
+
+{% endblock content %}

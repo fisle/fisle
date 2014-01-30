@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set active_page = 'archive' %}
+{% set title = 'Archive' %}
+
+{% block content %}
+
+{% for page in pages %}
+    <h2><a href="{{url_for('page', path=page.path)}}">{{page.title}}</a>
+        <small>{{page.tags}} // Posted on
+            <script>
+                document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").calendar());
+            </script>
+        </small>
+    </h2>
+{% else %}
+    No items.
+{% endfor %}
+
+{% endblock content %}

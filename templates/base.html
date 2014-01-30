@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fisle's {% if title %} - {{title}}{% endif %}</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="/static/monokai.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/momentjs/2.5.0/moment.min.js"></script>
+</head>
+<body>
+<div class="container"> 
+    <div class="header">
+        {% set navigation_bar = [
+            ('/', 'home', 'Home'),
+            ('/archive', 'archive', 'Archive'),
+            ('/about', 'about', 'About Me')
+        ] -%}
+        {% set active_page = active_page|default('home') -%}
+        <ul class="nav nav-pills pull-right">
+            {% for href, id, caption in navigation_bar %}
+            <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{caption|e}}</a></li>
+            {% endfor %}
+        </ul>
+        <h3 class="text-muted">fisle's</h3>
+    </div>
+    <div class="jumbotron">
+        <h1>fisle's</h1>
+        <p>Yet another blog, this time with <b>servers</b>, <b>GNU/Linux</b> and <b>network</b> related things.</p>
+    </div>
+    <div class="col-lg-12">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <div class="footer">
+        <p class="text-muted credit">
+            blog by fisle |
+            <a href="https://twitter.com/fisle_">
+                <i class="fa fa-twitter-square"></i>
+            </a> |
+            <a href="https://github.com/fisle">
+                <i class="fa fa-github"></i>
+            </a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

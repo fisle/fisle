@@ -1,0 +1,15 @@
+/* monokai syntax codehiliteing */
+.codehilite,.codehilite pre,.codehilite table { background:#272822 !important;color:#f8f8f2 !important; }
+.codehilite .hll { background-color:#49483e !important; }
+.codehilite .err { color:#960050 !important;background-color:#f8f8f2 !important; }
+.codehilite .c,.codehilite .cm,.codehilite .cp,.codehilite .c1,.codehilite .cs { color:#75715e !important; }
+.codehilite .k,.codehilite .kc,.codehilite .kd,.codehilite .kp,.codehilite .kr,.codehilite .kt,
+.codehilite .no { color:#66d9ef !important; }
+.codehilite .l,.codehilite .m,.codehilite .mf,.codehilite .mh,.codehilite .mi,.codehilite .mo,.codehilite .se,
+.codehilite .il { color:#ae81ff !important; }
+.codehilite .n,.codehilite .p,.codehilite .nb,.codehilite .ni,.codehilite .nl,.codehilite .nn,.codehilite .py,
+.codehilite .nv,.codehilite .w,.codehilite .bp,.codehilite .vc,.codehilite .vg,.codehilite .vi { color:#f8f8f2 !important; }
+.codehilite .o,.codehilite .kn,.codehilite .nt,.codehilite .ow { color:#f92672 !important; }
+.codehilite .ld,.codehilite .s,.codehilite .sb,.codehilite .sc,.codehilite .sd,.codehilite .s2,.codehilite .sh,
+.codehilite .si,.codehilite .sx,.codehilite .sr,.codehilite .s1,.codehilite .ss { color:#e6db74 !important; }
+.codehilite .na,.codehilite .nc,.codehilite .nd,.codehilite .ne,.codehilite .nf,.codehilite .nx { color:#a6e22e !important; }

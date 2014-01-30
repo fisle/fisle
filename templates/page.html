@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% set title = page.title %}
+
+{% block content %}
+
+<h1>
+    {{page.title}}
+    <small>{{page.tags}}</small>
+    <br><small>posted <script>document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").fromNow());</script></small>
+</h1>
+{% if page.edited %}
+<div><i>Edited on <script>document.write(moment("{{page.edited}}", "YYYY-M-DD HH:mm Z").calendar());</script></i></div>
+{% endif %}
+<br>
+{{page.html|safe}}
+
+{% endblock content %}
