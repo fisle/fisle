@@ -68,12 +68,15 @@ def page(path):
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 
-def make_external(url):
+def make_external(url=None):
+    if url is None:
+        url = ''
     return urljoin('https://fisle.eu/', url)
 
-def get_feed(amount=None):
+def get_feed(atom_url, amount=None):
     feed = AtomFeed('Fisle\'s',
-            feed_url=request.url, url=request.url_root)
+            feed_url=make_external(atom_url),
+            url=make_external())
     articles = (p for p in pages if 'date' in p.meta)
     latest = sorted(articles, reverse=True,
                     key=lambda p: p.meta['date'])
@@ -97,11 +100,11 @@ def get_feed(amount=None):
 
 @app.route('/atom.latest')
 def atom_latest():
-    return get_feed(5)
+    return get_feed('atom.latest', 5)
 
 @app.route('/atom.all')
 def atom_all():
-    return get_feed()
+    return get_feed('atom.all')
 
 
 if __name__ == '__main__':
