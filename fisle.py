@@ -72,7 +72,7 @@ def make_external(url):
     return urljoin('https://fisle.eu/', url)
 
 def get_feed(amount=None):
-    feed = AtomFeed('Recent Articles',
+    feed = AtomFeed('Fisle\'s',
             feed_url=request.url, url=request.url_root)
     articles = (p for p in pages if 'date' in p.meta)
     latest = sorted(articles, reverse=True,
