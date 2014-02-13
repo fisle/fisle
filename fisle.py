@@ -69,7 +69,7 @@ def page(path):
     return render_template('page.html', page=page)
 
 def make_external(url):
-    return urljoin(request.url_root, url)
+    return urljoin('https://fisle.eu/', url)
 
 def get_feed(amount=None):
     feed = AtomFeed('Recent Articles',
