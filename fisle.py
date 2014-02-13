@@ -85,8 +85,9 @@ def get_feed(amount=None):
             updated = page.meta['edited']
         except:
             updated = page.meta['date']
-        updated = datetime.strptime(updated, '%Y-%m-%d %H:%M +0200').date()
-        date = datetime.strptime(page.meta['date'], '%Y-%m-%d %H:%M +0200').date()
+        updated = datetime.strptime(updated, '%Y-%m-%d %H:%M +0200')
+        date = datetime.strptime(page.meta['date'], '%Y-%m-%d %H:%M +0200')
+        print date
         feed.add(page.title, page.html,
                 content_type='html',
                 url=make_external(url_for('page', path=page.path)),
