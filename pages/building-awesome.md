@@ -1,5 +1,5 @@
 title: Building Awesome from source is bullshit
-date 2014-03-04 00:10 +0200
+date: 2014-03-04 00:10 +0200
 tags: source, tiling, thoughts
 
 So I wanted AwesomeWM 3.5 on my Debian Sid box. Guess what, 3.5 is only in experimental?
