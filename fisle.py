@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
-from flask import Flask, render_template, request, url_for
-from flask.ext.flatpages import FlatPages, pygments_style_defs
+from flask import Flask, render_template, url_for
+from flask.ext.flatpages import FlatPages
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
 from datetime import date, datetime
@@ -68,15 +68,17 @@ def page(path):
     page = pages.get_or_404(path)
     return render_template('page.html', page=page)
 
+
 def make_external(url=None):
     if url is None:
         url = ''
     return urljoin('https://fisle.eu/', url)
 
+
 def get_feed(atom_url, amount=None):
     feed = AtomFeed('Fisle\'s',
-            feed_url=make_external(atom_url),
-            url=make_external())
+                    feed_url=make_external(atom_url),
+                    url=make_external())
     articles = (p for p in pages if 'date' in p.meta)
     latest = sorted(articles, reverse=True,
                     key=lambda p: p.meta['date'])
@@ -91,15 +93,17 @@ def get_feed(atom_url, amount=None):
         updated = datetime.strptime(updated, '%Y-%m-%d %H:%M +0200')
         date = datetime.strptime(page.meta['date'], '%Y-%m-%d %H:%M +0200')
         feed.add(page.title, page.html,
-                content_type='html',
-                url=make_external(url_for('page', path=page.path)),
-                updated=updated,
-                published=date)
+                 content_type='html',
+                 url=make_external(url_for('page', path=page.path)),
+                 updated=updated,
+                 published=date)
     return feed.get_response()
+
 
 @app.route('/atom.latest')
 def atom_latest():
     return get_feed('atom.latest', 5)
+
 
 @app.route('/atom.all')
 def atom_all():
