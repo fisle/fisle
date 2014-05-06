@@ -4,15 +4,13 @@
 
 {% for page in pages %}
 <div class="post">
-    <h1>
+    <h2>
         <a href="{{url_for('page', path=page.path)}}">{{page.title}}</a>
-        <small>{{page.tags}}</small>
-        <br><small>posted
-            <script>
-                document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").fromNow());
-            </script>
-        </small>
-    </h1>
+        <p>
+            <small><script>document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").fromNow());</script>  //</small>
+            <small>{{page.tags}}</small>
+        </p>
+    </h2>
     {% if page.edited %}
     <div><i>Edited on <script>document.write(moment("{{page.edited}}", "YYYY-M-DD HH:mm Z").calendar());</script></i></div>
     {% endif %}
@@ -20,7 +18,6 @@
     <div>
         {{page.html|safe}}
     </div>
-    {% if not loop.last %}<hr>{% endif %}
 </div>
 {% else %}
 nope.

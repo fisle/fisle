@@ -1,7 +1,16 @@
+/* remove rounded corners */
+* {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    font-family: 'Open Sans', sans-serif;
+}
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: #222;
+  color: #aaa;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -23,7 +32,12 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+}
+
+.post {
+    border-bottom: 1px solid #fff;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 /* Remove jumbotron border */
@@ -31,12 +45,15 @@ body {
     border: 0;
     padding-top: 5px;
     padding-bottom: 5px;
+    background: #222;
+    color: #fff;
+    margin-top: 40px;
 }
 
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 780px;
   }
 }
 .container-narrow > hr {
@@ -61,14 +78,31 @@ body {
   }
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
-    background-color: #005F6B;
+    background: #222;
+    border-bottom: 2px solid #fff;
+}
+.nav-pills > li.active > a {
+    border-bottom: 2px solid #fff;
+}
+.nav-pills > li > a:hover {
+    background: #222;
+    border-bottom: 2px solid #555;
 }
 .nav-pills > li > a {
-    color: #005F6B;
+    color: #ffffff;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
 }
 h1, h2, .jumbotron > h1, .header > .text-muted {
-    color: #343838;
+    color: #ffffff;
 }
 a:link, a:visited, a:focus, a:hover {
-    color: #005F6B;
+    color: #ffffff;
+}
+code {
+    background: #272822;
+    color: #ffff11;
 }
