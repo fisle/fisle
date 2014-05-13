@@ -6,14 +6,13 @@
 
 {% for page in pages %}
     <h2><a href="{{url_for('page', path=page.path)}}">{{page.title}}</a>
-        <p>
-            <small>Posted on
-                <script>
-                    document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").calendar());
-                </script>
-                // {{page.tags}}
-            </small>
-        </p>
+        <br>
+        <small>Posted on
+            <script>
+                document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").calendar());
+            </script>
+            // {{page.tags}}
+        </small>
     </h2>
 {% else %}
     No items.

@@ -5,10 +5,9 @@
 <div class="post">
     <h2>
         <a href="#">{{page.title}}</a>
-        <p>
-            <small> <script>document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").fromNow());</script> // </small>
-            <small>{{page.tags}}</small>
-        </p>
+        <br>
+        <small> <script>document.write(moment("{{page.date}}", "YYYY-M-DD HH:mm Z").fromNow());</script> // </small>
+        <small>{{page.tags}}</small>
     </h2>
     {% if page.edited %}
     <div><i>Edited on <script>document.write(moment("{{page.edited}}", "YYYY-M-DD HH:mm Z").calendar());</script></i></div>
