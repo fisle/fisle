@@ -13,11 +13,11 @@
     {% if page.edited %}
     <div><i>Edited on <script>document.write(moment("{{page.edited}}", "YYYY-M-DD HH:mm Z").calendar());</script></i></div>
     {% endif %}
-    <br>
     <div>
         {{page.html|safe}}
     </div>
 </div>
+{% if not loop.last %}<hr>{% endif %}
 {% else %}
 nope.
 {% endfor %}
