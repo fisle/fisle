@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import sys
 from flask import Flask, render_template, url_for
 from flask.ext.flatpages import FlatPages
@@ -6,7 +5,7 @@ from flask_frozen import Freezer
 from flaskext.markdown import Markdown
 from datetime import date, datetime
 from werkzeug.contrib.atom import AtomFeed
-from urlparse import urljoin
+from urllib.parse import urljoin
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -27,7 +26,7 @@ def calculate_age(born):
     try:
         birthday = born.replace(year=today.year)
     except ValueError:  # leap year stuff
-        birthday = born.replace(year=today.year, day=born.day-1)
+        birthday = born.replace(year=today.year, day=born.day - 1)
     if birthday > today:
         return today.year - born.year - 1
     else:
@@ -45,6 +44,12 @@ def index():
     return render_template('index.html', pages=latest)
 
 
+@app.route('/projects')
+def projects():
+    """Lists my projects"""
+    return render_template('projects.html')
+
+
 @app.route('/archive')
 def archive():
     """Lists titles of all entries"""
@@ -57,7 +62,7 @@ def archive():
 @app.route('/about')
 def about():
     """About page"""
-    birthday = ''  # YYYY-MM-DD format
+    birthday = '1991-05-01'  # YYYY-MM-DD format
     age = calculate_age(birthday)  # Calculates current age
     return render_template('about.html', age=age)
 
@@ -116,4 +121,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':
         freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(port=8080)
