@@ -4,105 +4,116 @@
     -moz-border-radius: 0 !important;
     border-radius: 0 !important;
     font-family: 'Open Sans', sans-serif;
-}
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #222;
-  color: #aaa;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+a {
+    text-decoration: none;
+}
+.brand-title a { color: #fff; }
+
+#layout { padding: 0; }
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+    color: #fff;
+    background: #252a3a;
+}
+
+.brand-title, .brand-tagline {
+    margin: 0;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: #fff;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    *display: inline; /* Asterisk is a CSS hack for IE >= 7*/
+    zoom: 1;
+}
+
+.nav-item a {
+    background: transparent;
+    text-transform: uppercase;
+    color: #828282;
+}
+.content a {
+    color: #000;
+}
+
+.nav-item a:hover, .nav-item a:focus {
+    color: #fff;
+}
+.active a {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+    text-align: center;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+.codehilite, code {
+    padding: 0.1em 1em;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
+.codehilite pre {
+    white-space: normal;
+    overflow: visible;
+}
+
+code {
+    background: #272822;
+    color: #ddd;
+    display: block;
+}
+
+h2 {
+    padding: 0;
+}
+h2 small {
+    color: #828282;
+    font-weight: 300;
 }
 
 .post {
-    border-bottom: 1px solid #fff;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 2em;
+    color: #333;
 }
 
-/* Remove jumbotron border */
-.jumbotron {
-    border: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background: #222;
-    color: #fff;
-    margin-top: 40px;
-}
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 780px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
+    .header {
+        margin: 80% 2em 0;
+        text-align: right;
+    }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
-    background: #222;
-    border-bottom: 2px solid #fff;
-}
-.nav-pills > li.active > a {
-    border-bottom: 2px solid #fff;
-}
-.nav-pills > li > a:hover {
-    background: #222;
-    border-bottom: 2px solid #555;
-}
-.nav-pills > li > a {
-    color: #ffffff;
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-weight: bold;
-}
-h1, h2, .jumbotron > h1, .header > .text-muted {
-    color: #ffffff;
-}
-a:link, a:visited, a:focus, a:hover {
-    color: #ffffff;
-}
-code {
-    background: #272822;
-    color: #ffff11;
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
 }
