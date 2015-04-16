@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% set active_page = 'projects' %}
+{% set title = 'Projects' %}
+{% block content %}
+
+<h2>Projects</h2>
+
+<div class="pure-g">
+    <div class="pure-u-1-4">
+        <a href="https://github.com/fisle/dyndns_cpanel"><b>dyndns_cpanel</b></a>
+    </div>
+    <div class="pure-u-3-4">
+        Dynamic DNS updater to be run on a remote system. Works only with cPanel as DNS host.
+    </div>
+</div>
+
+
+<div class="pure-g" style="margin-top: 20px;">
+    <div class="pure-u-1-4">
+        <a href="https://github.com/fisle/rebot"><b>rebot</b></a>
+    </div>
+    <div class="pure-u-3-4">
+        WoW battleground bot. Sends keystrokes to WoW window using WIN32 API. Works under Wine.
+    </div>
+</div>
+
+
+<div class="pure-g" style="margin-top: 20px;">
+    <div class="pure-u-1-4">
+        <a href="https://github.com/fisle/netflask"><b>netflask</b></a>
+    </div>
+    <div class="pure-u-3-4">
+        HTML5 Movie gallery written in Python, Flask. Features automatic subtitle fetching, movie encoding, automatic library scanning.
+    </div>
+</div>
+
+{% endblock %}
