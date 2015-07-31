@@ -1,0 +1,56 @@
+/* monokai syntax codehiliteing */
+/* line 2, ../scss/monokai-min.scss */
+.codehilite, .codehilite pre, .codehilite table {
+  background: #272822 !important;
+  color: #f8f8f2 !important;
+}
+
+/* line 3, ../scss/monokai-min.scss */
+.codehilite .hll {
+  background-color: #49483e !important;
+}
+
+/* line 4, ../scss/monokai-min.scss */
+.codehilite .err {
+  color: #960050 !important;
+  background-color: #f8f8f2 !important;
+}
+
+/* line 5, ../scss/monokai-min.scss */
+.codehilite .c, .codehilite .cm, .codehilite .cp, .codehilite .c1, .codehilite .cs {
+  color: #75715e !important;
+}
+
+/* line 6, ../scss/monokai-min.scss */
+.codehilite .k, .codehilite .kc, .codehilite .kd, .codehilite .kp, .codehilite .kr, .codehilite .kt,
+.codehilite .no {
+  color: #66d9ef !important;
+}
+
+/* line 8, ../scss/monokai-min.scss */
+.codehilite .l, .codehilite .m, .codehilite .mf, .codehilite .mh, .codehilite .mi, .codehilite .mo, .codehilite .se,
+.codehilite .il {
+  color: #ae81ff !important;
+}
+
+/* line 10, ../scss/monokai-min.scss */
+.codehilite .n, .codehilite .p, .codehilite .nb, .codehilite .ni, .codehilite .nl, .codehilite .nn, .codehilite .py,
+.codehilite .nv, .codehilite .w, .codehilite .bp, .codehilite .vc, .codehilite .vg, .codehilite .vi {
+  color: #f8f8f2 !important;
+}
+
+/* line 12, ../scss/monokai-min.scss */
+.codehilite .o, .codehilite .kn, .codehilite .nt, .codehilite .ow {
+  color: #f92672 !important;
+}
+
+/* line 13, ../scss/monokai-min.scss */
+.codehilite .ld, .codehilite .s, .codehilite .sb, .codehilite .sc, .codehilite .sd, .codehilite .s2, .codehilite .sh,
+.codehilite .si, .codehilite .sx, .codehilite .sr, .codehilite .s1, .codehilite .ss {
+  color: #e6db74 !important;
+}
+
+/* line 15, ../scss/monokai-min.scss */
+.codehilite .na, .codehilite .nc, .codehilite .nd, .codehilite .ne, .codehilite .nf, .codehilite .nx {
+  color: #a6e22e !important;
+}

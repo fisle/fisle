@@ -1,0 +1,130 @@
+@import "compass";
+@import "_monokai-min";
+@import "_pure-min";
+@import "_grids-responsive-min";
+
+// Define basic colors
+$color: #fff;
+$sidebarbg: #252A3A;
+$link: #000;
+$post: #333;
+$font: 'Open Sans', sans-serif;
+
+// Simple mixin removing pads and margins
+@mixin nopad() {
+    margin: 0;
+    padding: 0;
+}
+
+// Remove rounded corners
+* {
+    @include border-radius(0 !important);
+    @include box-sizing(border-box);
+    font-family: $font;
+}
+
+// Base layout
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+
+    @media (min-width: 48em) {
+        margin: 80% 2em 0;
+        text-align: right;
+    }
+}
+
+.sidebar {
+    color: $color;
+    background: $sidebarbg;
+
+    @media (min-width: 48em) {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.content {
+    padding: 2em 1em 0;
+    a {
+        color: $link;
+    }
+
+    @media (min-width: 48em) {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
+}
+
+.footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+.brand-title a { color: $color; }
+
+h2 {
+    padding: 0;
+    small {
+        color: #828282;
+        font-weight: 300;
+    }
+}
+
+.post {
+    padding-bottom: 2em;
+    color: $post;
+}
+
+#layout { padding: 0; }
+
+
+.brand-title, .brand-tagline {
+    margin: 0;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: $color;
+}
+
+.nav-list {
+    @include nopad();
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    *display: inline; /* Asterisk is a CSS hack for IE >= 7*/
+    zoom: 1;
+    a {
+        background: transparent;
+        text-transform: uppercase;
+        color: #828282;
+    }
+    a:hover, a:focus {
+        color: $color;
+    }
+}
+
+.active a {
+    text-decoration: underline;
+}
+
+.codehilite, code {
+    padding: 0.1em 1em;
+}
+
+.codehilite pre {
+    white-space: normal;
+    overflow: visible;
+}
+
+code {
+    background: #272822;
+    color: #ddd;
+    display: block;
+}
